@@ -1,8 +1,8 @@
-class AddIndexesSpreeVariants < ActiveRecord::Migration[5.2]
+class AddIndexesSpreeVariants < SpreeExtension::Migration[5.1]
   disable_ddl_transaction!
 
   def change
-    i%[gtin language age parts_count material].each do |field|
+    %i[gtin language age parts_count material country].each do |field|
       add_index :spree_variants, field, algorithm: :concurrently
     end
   end

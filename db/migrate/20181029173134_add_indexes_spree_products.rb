@@ -1,4 +1,4 @@
-class AddIndexesSpreeProducts < ActiveRecord::Migration[5.2]
+class AddIndexesSpreeProducts < SpreeExtension::Migration[5.1]
   disable_ddl_transaction!
 
   def change

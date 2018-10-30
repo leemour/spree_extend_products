@@ -1,4 +1,4 @@
-class AddMaterialToSpreeVariants < ActiveRecord::Migration[5.2]
+class AddMaterialToSpreeVariants < SpreeExtension::Migration[5.1]
   def change
     add_column :spree_variants, :material, :integer
   end

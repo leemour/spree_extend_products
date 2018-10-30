@@ -1,4 +1,4 @@
-class AddAgeToSpreeVariants < ActiveRecord::Migration[5.2]
+class AddAgeToSpreeVariants < SpreeExtension::Migration[5.1]
   def change
     add_column :spree_variants, :age, :integer
   end
