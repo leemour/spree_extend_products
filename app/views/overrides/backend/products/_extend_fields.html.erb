@@ -1,0 +1,50 @@
+<div data-hook="admin_product_form_brand_id">
+  <%= f.field_container :brand_id, class: ['form-group'] do %>
+    <%= f.label :brand_id %>
+    <%= f.error_message_on :brand_id %>
+    <%= f.select :brand_id, Spree::Brand.order('name ASC').to_options(:name), {}, class: 'select2' %>
+  <% end %>
+</div>
+<div data-hook="admin_product_form_author_id">
+  <%= f.field_container :author_id, class: ['form-group'] do %>
+    <%= f.label :author_id %>
+    <%= f.error_message_on :author_id %>
+    <%= f.select :author_id, Spree::Author.author.order('name ASC').to_options(:full_name), {}, class: 'select2' %>
+  <% end %>
+</div>
+<div data-hook="admin_product_form_country_id">
+  <%= f.field_container :country_id, class: ['form-group'] do %>
+    <%= f.label :country_id %>
+    <%= f.error_message_on :country_id %>
+    <%= f.select :country_id, Spree::Country.order('name ASC').to_options(:name), {}, class: 'select2' %>
+  <% end %>
+</div>
+<div data-hook="admin_product_form_material">
+  <%= f.field_container :material, class: ['form-group'] do %>
+    <%= f.label :material %>
+    <%= f.error_message_on :material %>
+    <%= f.select :material, Spree::Variant.materials_for_select, {}, class: 'select2' %>
+  <% end %>
+</div>
+<div data-hook="admin_product_form_language">
+  <%= f.field_container :language, class: ['form-group'] do %>
+    <%= f.label :language %>
+    <%= f.error_message_on :language %>
+    <%= f.select :language, Spree::Variant.languages_for_select, {}, class: 'select2' %>
+  <% end %>
+</div>
+<div data-hook="admin_product_form_gtin">
+  <%= f.field_container :gtin, class: ['form-group'] do %>
+    <%= f.label :gtin %>
+    <%= f.error_message_on :gtin %>
+    <%= f.text_field :gtin, class: 'form-control' %>
+  <% end %>
+</div>
+
+<div data-hook="admin_product_form_parts_count">
+  <%= f.field_container :parts_count, class: ['form-group'] do %>
+    <%= f.label :parts_count %>
+    <%= f.error_message_on :parts_count %>
+    <%= f.number_field :parts_count, class: 'form-control' %>
+  <% end %>
+</div>

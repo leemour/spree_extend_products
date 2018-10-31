@@ -1,0 +1,70 @@
+ru:
+  common_attributes: &common_attrs
+    id: ID
+    created_at: Создан
+    updated_at: Изменен
+    permalink: Ссылка
+    slug: Ссылка
+    status: Статус
+    tel: Телефон
+  seo_attributes: &seo_attrs
+    meta_title: SEO заголовок
+    meta_description: SEO описание
+    meta_keywords: Ключевые слова
+  activerecord:
+    models:
+      spree/author:
+        many: Авторов
+        one: Автор
+        few: Автора
+        other: Авторы
+      spree/brand:
+        many: Брендов
+        one: Бренд
+        few: Бренда
+        other: Бренды
+    attributes:
+      spree/author:
+        <<: *common_attrs
+        <<: *seo_attrs
+        name: Имя
+        surname: Фамилия
+        biography: Биография
+        avatar: Аватар
+        relation: Роль
+        country: Страна
+        country_id: Страна
+      spree/brand:
+        <<: *common_attrs
+        <<: *seo_attrs
+        name: Название
+        logo: Логотип
+        description: Описание
+        country: Страна
+        country_id: Страна
+      spree/product:
+        kind: Тип
+        brand: Бренд
+        brand_id: Бренд
+        author: Автор
+        author_id: Автор
+        illustrator: Иллюстратор
+        illustrator_id: Иллюстратор
+        gtin: GTIN (ISBN)
+        language: Язык
+        parts_count: Кол-во деталей
+        country: Страна
+        country_id: Страна
+        material: Материал
+      spree/variant:
+        gtin: GTIN (ISBN)
+        language: Язык
+        parts_count: Кол-во деталей
+        country: Страна
+        country_id: Страна
+        material: Материал
+  spree:
+    author:
+      new_author: Новый автор
+    brand:
+      new_brand: Новый бренд

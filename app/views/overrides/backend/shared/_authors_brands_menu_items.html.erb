@@ -1,0 +1,10 @@
+<% if can? :admin, Spree::Brand %>
+  <ul class="nav nav-sidebar">
+    <%= tab Spree::Brand, url: spree.admin_brands_path, icon: 'adjust', label: plural_resource_name(Spree::Brand), match_path: '/brands' %>
+  </ul>
+<% end %>
+<% if can? :admin, Spree::Author %>
+  <ul class="nav nav-sidebar">
+    <%= tab Spree::Author, url: spree.admin_authors_path, icon: 'wrench', label: plural_resource_name(Spree::Author), match_path: '/authors' %>
+  </ul>
+<% end %>

@@ -1,0 +1,44 @@
+<% content_for :page_title do %>
+  <%= plural_resource_name(Spree::Brand) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t('brand.new_brand'), new_object_url, icon: 'plus', class: 'btn-primary', id: 'admin_new_brand' %>
+<% end %>
+
+<% if @brands.any? %>
+  <table class="table" id="listing_brands" data-hook>
+    <colgroup>
+      <col style="width: 40%">
+      <col style="width: 35%">
+      <col style="width: 10%">
+      <col style="width: 15%">
+    </colgroup>
+    <thead>
+      <tr data-hook="admin_brands_index_headers">
+        <th><%= Spree::Brand.human_attribute_name(:name) %></th>
+        <th><%= Spree::Brand.human_attribute_name(:permalink) %></th>
+        <th class="text-center"><%= Spree::Brand.t_status(:enabled) %></th>
+        <th data-hook="admin_brands_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @brands.each do |brand| %>
+        <tr data-hook="admin_brands_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id brand %>">
+          <td><%= brand.name %></td>
+          <td><%= link_to brand.permalink, main_app.brand_path(brand), target: '_blank' %></td>
+          <td class="text-center"><%= content_tag(:i, '', class: 'icon icon-ok') if brand.enabled? %></td>
+          <td class="actions text-right" data-hook="admin_brands_index_row_actions">
+            <%= link_to_edit brand, no_text: true %>
+            <%= link_to_delete brand, no_text: true %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-warning no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: Spree::Brand.model_name.human) %>,
+    <%= link_to Spree.t(:add_one), spree.new_admin_brand_path %>!
+  </div>
+<% end %>

@@ -6,7 +6,13 @@ module SpreeExtendProducts
 
     # use rspec for tests
     config.generators do |g|
-      g.test_framework :rspec
+      g.test_framework :rspec,
+        fixtures: true,
+        helper_specs: false,
+        controller_specs: false,
+        routing_specs: false,
+        request_specs: false
+      g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
 
     def self.activate

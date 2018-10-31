@@ -1,0 +1,5 @@
+<% content_for :page_title do %>
+  <%= Spree.t('brand.new_brand') %>
+<% end %>
+
+<%= render 'form', resource: @brand %>
