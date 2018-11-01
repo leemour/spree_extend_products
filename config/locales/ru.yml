@@ -52,14 +52,14 @@ ru:
         illustrator_id: Иллюстратор
         gtin: GTIN (ISBN)
         language: Язык
-        parts_count: Кол-во деталей
+        parts_count: Кол-во деталей/страниц
         country: Страна
         country_id: Страна
         material: Материал
       spree/variant:
         gtin: GTIN (ISBN)
         language: Язык
-        parts_count: Кол-во деталей
+        parts_count: Кол-во деталей/страниц
         country: Страна
         country_id: Страна
         material: Материал
