@@ -46,8 +46,8 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :relation %>
-        <%= f.select :relation, Spree::Author.relations_for_select, {}, class: 'select2' %>
+        <%= f.label :role %>
+        <%= f.select :role, Spree::Author.roles_for_select, {}, class: 'select2' %>
       </div>
     </div>
   </div>

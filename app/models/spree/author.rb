@@ -10,7 +10,7 @@ class Spree::Author < ApplicationRecord
     enabled:  0,
     disabled: 1,
   }
-  enum relation: {
+  enum role: {
     author:      0,
     illustrator: 1,
   }

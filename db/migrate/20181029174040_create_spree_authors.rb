@@ -6,7 +6,7 @@ class CreateSpreeAuthors < SpreeExtension::Migration[5.1]
       t.text :biography
       t.string :permalink
       t.string  :avatar
-      t.integer :relation, default: 0, null: false
+      t.integer :role, default: 0, null: false
       t.integer :status, default: 0, null: false
 
       t.timestamps

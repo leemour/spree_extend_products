@@ -31,7 +31,7 @@ ru:
         surname: Фамилия
         biography: Биография
         avatar: Аватар
-        relation: Роль
+        role: Роль
         country: Страна
         country_id: Страна
       spree/brand:
