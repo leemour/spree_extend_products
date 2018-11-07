@@ -1,0 +1,7 @@
+<div data-hook="new_product_kind" class="col-xs-12 col-md-4">
+  <%= f.field_container :kind, class: ['form-group'] do %>
+    <%= f.label :kind %>
+    <%= f.error_message_on :kind %>
+    <%= f.select :kind, Spree::Product.kinds_for_select, {}, class: 'select2' %>
+  <% end %>
+</div>
