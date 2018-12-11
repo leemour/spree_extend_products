@@ -25,7 +25,7 @@
   <%= f.field_container :country_id, class: ['form-group'] do %>
     <%= f.label :country_id %>
     <%= f.error_message_on :country_id %>
-    <%= f.select :country_id, Spree::Country.order('name ASC').to_options(:name), {}, class: 'select2' %>
+    <%= f.select :country_id, Spree::Country.for_product_form.order('name ASC').to_options(:name), {}, class: 'select2' %>
   <% end %>
 </div>
 <div data-hook="admin_product_form_material">
