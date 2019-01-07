@@ -26,6 +26,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'spree_core', '>= 3.1.0', '< 4.0'
   s.add_dependency 'spree_extension'
+  s.add_dependency 'carrierwave', '~> 1.0'
+  s.add_dependency 'mini_magick', '~> 4.0'
+  s.add_dependency 'carrierwave-bombshelter', '~> 0.2'
+  s.add_dependency 'carrierwave-imageoptimizer', '~> 1.4'
 
   # s.add_development_dependency 'capybara'
   # s.add_development_dependency 'capybara-screenshot'
