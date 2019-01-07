@@ -8,3 +8,8 @@
     <%= tab Spree::Author, url: spree.admin_authors_path, icon: 'wrench', label: plural_resource_name(Spree::Author), match_path: '/authors' %>
   </ul>
 <% end %>
+<% if can? :admin, Spree::Collection %>
+  <ul class="nav nav-sidebar">
+    <%= tab Spree::Collection, url: spree.admin_collections_path, icon: 'equalizer', label: plural_resource_name(Spree::Collection), match_path: '/collections' %>
+  </ul>
+<% end %>

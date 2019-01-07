@@ -1,4 +1,4 @@
-class CreateSpreeCollections < ActiveRecord::Migration[5.2]
+class CreateSpreeCollections < ActiveRecord::Migration[5.1]
   def change
     create_table :spree_collections do |t|
       t.string :name

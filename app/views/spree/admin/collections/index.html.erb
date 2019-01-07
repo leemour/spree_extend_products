@@ -27,7 +27,7 @@
         <tr data-hook="admin_collections_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id collection %>">
           <td><%= collection.name %></td>
           <td><%= link_to collection.permalink, main_app.collection_path(collection), target: '_blank' %></td>
-          <td><%= collection.t_kind %></td>
+          <td><%= collection.t_enum(:kind) %></td>
           <td class="actions text-right" data-hook="admin_collections_index_row_actions">
             <%= link_to_edit collection, no_text: true %>
             <%= link_to_delete collection, no_text: true %>

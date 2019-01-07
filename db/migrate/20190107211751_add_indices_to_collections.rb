@@ -1,7 +1,7 @@
-class AddIndicesToCollections < ActiveRecord::Migration[5.2]
+class AddIndicesToCollections < ActiveRecord::Migration[5.1]
   def change
-    add_index :collections, :name
-    add_index :collections, :permalink
-    add_index :collections, :kind
+    add_index :spree_collections, :name
+    add_index :spree_collections, :permalink
+    add_index :spree_collections, :kind
   end
 end
