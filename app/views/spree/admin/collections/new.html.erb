@@ -1,0 +1,5 @@
+<% content_for :page_title do %>
+  <%= Spree.t('collection.new_collection') %>
+<% end %>
+
+<%= render 'form', resource: @collection %>

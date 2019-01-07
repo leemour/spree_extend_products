@@ -1,5 +1,5 @@
 <% content_for :page_actions do %>
-  <%= button_link_to Spree.t(:back_to_resource_list, resource: plural_resource_name(Spree::Author)), spree.admin_brands_path, icon: 'arrow-left', class: 'btn-primary' %>
+  <%= button_link_to Spree.t(:back_to_resource_list, resource: plural_resource_name(Spree::Brand)), spree.admin_brands_path, icon: 'arrow-left', class: 'btn-primary' %>
 <% end %>
 
 <%= form_for [:admin, resource] do |f| %>
@@ -37,7 +37,7 @@
 
       <div class="form-group">
         <%= f.label :status %>
-        <%= f.select :status, Spree::Author.statuses_for_select, {}, class: 'select2' %>
+        <%= f.select :status, Spree::Brand.statuses_for_select, {}, class: 'select2' %>
       </div>
     </div>
   </div>

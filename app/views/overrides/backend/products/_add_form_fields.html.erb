@@ -12,8 +12,15 @@
     <%= f.select :author_id, Spree::Author.author.order('name ASC').to_options(:full_name), {}, class: 'select2' %>
   <% end %>
 </div>
+<div data-hook="admin_product_form_collection_id">
+  <%= f.field_container :collection_id, class: ['form-group'] do %>
+    <%= f.label :collection_id %>
+    <%= f.error_message_on :collection_id %>
+    <%= f.select :collection_id, Spree::Collection.order('name ASC').to_options(:full_name), {}, class: 'select2' %>
+  <% end %>
+</div>
 <% if f.object.book? %>
-  <div data-hook="admin_product_form_author_id">
+  <div data-hook="admin_product_form_illustrator_id">
     <%= f.field_container :illustrator_id, class: ['form-group'] do %>
       <%= f.label :illustrator_id %>
       <%= f.error_message_on :illustrator_id %>

@@ -18,5 +18,4 @@ class Spree::Author < ApplicationRecord
   def full_name
     [name, surname].compact.join(' ')
   end
-
 end

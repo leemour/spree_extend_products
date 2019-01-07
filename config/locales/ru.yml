@@ -23,6 +23,11 @@ ru:
         one: Бренд
         few: Бренда
         other: Бренды
+      spree/collection:
+        many: Серий
+        one: Серия
+        few: Серии
+        other: Серии
     attributes:
       spree/author:
         <<: *common_attrs
@@ -36,12 +41,20 @@ ru:
         country_id: Страна
       spree/brand:
         <<: *common_attrs
-        <<: *seo_attrs
         name: Название
         logo: Логотип
         description: Описание
         country: Страна
         country_id: Страна
+      spree/collection:
+        <<: *common_attrs
+        <<: *seo_attrs
+        name: Название
+        kind: Тип товаров
+        products_count: Кол-во товаров
+        country_id: Страна
+        created_at: Создана
+        updated_at: Изменена
       spree/product:
         kind: Тип
         brand: Бренд
@@ -56,6 +69,8 @@ ru:
         country: Страна
         country_id: Страна
         material: Материал
+        collection: Серия
+        collection_id: Серия
       spree/variant:
         gtin: GTIN (ISBN)
         language: Язык
@@ -68,3 +83,5 @@ ru:
       new_author: Новый автор
     brand:
       new_brand: Новый бренд
+    collection:
+      new_collection: Новая серия
