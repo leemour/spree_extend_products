@@ -10,6 +10,6 @@
 <% end %>
 <% if can? :admin, Spree::Collection %>
   <ul class="nav nav-sidebar">
-    <%= tab Spree::Collection, url: spree.admin_collections_path, icon: 'equalizer', label: plural_resource_name(Spree::Collection), match_path: '/collections' %>
+    <%= tab Spree::Collection, url: spree.admin_collections_path, icon: 'folder-open', label: plural_resource_name(Spree::Collection), match_path: '/collections' %>
   </ul>
 <% end %>

@@ -7,7 +7,8 @@ Spree::Product.class_eval do
     class_name: 'Spree::Author'
   belongs_to :illustrator, -> { where(relation: :illustrator) },
     class_name: 'Spree::Author'
-  belongs_to :collection, class_name: 'Spree::Collection', counter_cache: true
+  belongs_to :collection, class_name: 'Spree::Collection', counter_cache: true,
+    optional: true
 
   # validates :brand, presence: true
 
