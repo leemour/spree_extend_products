@@ -10,7 +10,8 @@
   <table class="table" id="listing_authors" data-hook>
     <colgroup>
       <col style="width: 40%">
-      <col style="width: 35%">
+      <col style="width: 25%">
+      <col style="width: 10%">
       <col style="width: 10%">
       <col style="width: 15%">
     </colgroup>
@@ -18,6 +19,7 @@
       <tr data-hook="admin_authors_index_headers">
         <th><%= Spree::Author.human_attribute_name(:name) %></th>
         <th><%= Spree::Author.human_attribute_name(:permalink) %></th>
+        <th><%= Spree::Author.human_attribute_name(:role) %></th>
         <th class="text-center"><%= Spree::Author.t_status(:enabled) %></th>
         <th data-hook="admin_authors_index_header_actions" class="actions"></th>
       </tr>
@@ -27,6 +29,7 @@
         <tr data-hook="admin_authors_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id author %>">
           <td><%= author.full_name %></td>
           <td><%= link_to author.permalink, main_app.author_path(author), target: '_blank' %></td>
+          <td><%= author.t_enum(:role) %></td>
           <td class="text-center"><%= content_tag(:i, '', class: 'icon icon-ok') if author.enabled? %></td>
           <td class="actions text-right" data-hook="admin_authors_index_row_actions">
             <%= link_to_edit author, no_text: true %>
