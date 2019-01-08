@@ -5,3 +5,10 @@
     <%= f.select :kind, Spree::Product.kinds_for_select, {}, class: 'select2' %>
   <% end %>
 </div>
+<div data-hook="new_product_country_id">
+  <%= f.field_container :country_id, class: ['form-group'] do %>
+    <%= f.label :country_id %>
+    <%= f.error_message_on :country_id %>
+    <%= f.select :country_id, Spree::Country.for_product_form.order('name ASC').to_options(:name), {}, class: 'select2' %>
+  <% end %>
+</div>
