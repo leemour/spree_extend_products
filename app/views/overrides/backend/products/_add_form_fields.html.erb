@@ -12,13 +12,6 @@
     <%= f.select :author_id, Spree::Author.author.order('name ASC').to_options(:full_name), {}, class: 'select2' %>
   <% end %>
 </div>
-<div data-hook="admin_product_form_collection_id">
-  <%= f.field_container :collection_id, class: ['form-group'] do %>
-    <%= f.label :collection_id %>
-    <%= f.error_message_on :collection_id %>
-    <%= f.select :collection_id, Spree::Collection.order('name ASC').to_options(:name), {include_blank: true}, class: 'select2' %>
-  <% end %>
-</div>
 <% if f.object.book? %>
   <div data-hook="admin_product_form_illustrator_id">
     <%= f.field_container :illustrator_id, class: ['form-group'] do %>
@@ -28,6 +21,34 @@
     <% end %>
   </div>
 <% end %>
+<div data-hook="admin_product_form_gtin">
+  <%= f.field_container :gtin, class: ['form-group'] do %>
+    <%= f.label :gtin %>
+    <%= f.error_message_on :gtin %>
+    <%= f.text_field :gtin, class: 'form-control' %>
+  <% end %>
+</div>
+<div data-hook="admin_product_form_collection_id">
+  <%= f.field_container :collection_id, class: ['form-group'] do %>
+    <%= f.label :collection_id %>
+    <%= f.error_message_on :collection_id %>
+    <%= f.select :collection_id, Spree::Collection.order('name ASC').to_options(:name), {include_blank: true}, class: 'select2' %>
+  <% end %>
+</div>
+<div data-hook="admin_product_form_country_id">
+  <%= f.field_container :country_id, class: ['form-group'] do %>
+    <%= f.label :country_id %>
+    <%= f.error_message_on :country_id %>
+    <%= f.select :country_id, Spree::Country.for_product_form.order('name ASC').to_options(:name), {}, class: 'select2' %>
+  <% end %>
+</div>
+<div data-hook="admin_product_form_parts_count">
+  <%= f.field_container :parts_count, class: ['form-group'] do %>
+    <%= f.label :parts_count %>
+    <%= f.error_message_on :parts_count %>
+    <%= f.number_field :parts_count, class: 'form-control' %>
+  <% end %>
+</div>
 <div data-hook="admin_product_form_material">
   <%= f.field_container :material, class: ['form-group'] do %>
     <%= f.label :material %>
@@ -40,20 +61,5 @@
     <%= f.label :language %>
     <%= f.error_message_on :language %>
     <%= f.select :language, Spree::Variant.languages_for_select, {}, class: 'select2' %>
-  <% end %>
-</div>
-<div data-hook="admin_product_form_gtin">
-  <%= f.field_container :gtin, class: ['form-group'] do %>
-    <%= f.label :gtin %>
-    <%= f.error_message_on :gtin %>
-    <%= f.text_field :gtin, class: 'form-control' %>
-  <% end %>
-</div>
-
-<div data-hook="admin_product_form_parts_count">
-  <%= f.field_container :parts_count, class: ['form-group'] do %>
-    <%= f.label :parts_count %>
-    <%= f.error_message_on :parts_count %>
-    <%= f.number_field :parts_count, class: 'form-control' %>
   <% end %>
 </div>
