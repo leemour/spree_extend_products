@@ -1,13 +1,13 @@
 <div data-hook="new_product_kind" class="col-xs-12 col-md-4">
   <%= f.field_container :kind, class: ['form-group'] do %>
-    <%= f.label :kind %>
+    <%= f.label :kind %> <span class="required">*</span>
     <%= f.error_message_on :kind %>
     <%= f.select :kind, Spree::Product.kinds_for_select, {}, class: 'select2' %>
   <% end %>
 </div>
-<div data-hook="new_product_country_id">
+<div data-hook="new_product_country_id" class="col-xs-12 col-md-4">
   <%= f.field_container :country_id, class: ['form-group'] do %>
-    <%= f.label :country_id %>
+    <%= f.label :country_id %> <span class="required">*</span>
     <%= f.error_message_on :country_id %>
     <%= f.select :country_id, Spree::Country.for_product_form.order('name ASC').to_options(:name), {}, class: 'select2' %>
   <% end %>
