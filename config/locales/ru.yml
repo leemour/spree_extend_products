@@ -32,6 +32,7 @@ ru:
       spree/author:
         <<: *common_attrs
         <<: *seo_attrs
+        full_name: Имя
         name: Имя
         surname: Фамилия
         biography: Биография
