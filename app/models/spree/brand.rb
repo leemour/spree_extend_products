@@ -2,6 +2,8 @@ class Spree::Brand < Spree::Base
   belongs_to :country, class_name: 'Spree::Country'
   has_many :products, class_name: 'Spree::Product', dependent: :destroy
 
+  acts_as_paranoid
+
   mount_uploader :logo, BrandLogoUploader
 
   validates :name, presence: true, length: { in: 2..20 }
