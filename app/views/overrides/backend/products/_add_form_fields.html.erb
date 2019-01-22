@@ -9,7 +9,7 @@
   <%= f.field_container :author_id, class: ['form-group'] do %>
     <%= f.label :author_id %>
     <%= f.error_message_on :author_id %>
-    <%= f.select :author_id, Spree::Author.author.order('name ASC').to_options(:full_name), {}, class: 'select2' %>
+    <%= f.select :author_id, Spree::Author.author.order('full_name ASC').to_options(:full_name), {}, class: 'select2' %>
   <% end %>
 </div>
 <% if f.object.book? %>
@@ -17,7 +17,7 @@
     <%= f.field_container :illustrator_id, class: ['form-group'] do %>
       <%= f.label :illustrator_id %>
       <%= f.error_message_on :illustrator_id %>
-      <%= f.select :illustrator_id, Spree::Author.illustrator.order('name ASC').to_options(:full_name), {}, class: 'select2' %>
+      <%= f.select :illustrator_id, Spree::Author.illustrator.order('full_name ASC').to_options(:full_name), {}, class: 'select2' %>
     <% end %>
   </div>
 <% end %>
