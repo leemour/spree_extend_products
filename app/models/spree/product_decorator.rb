@@ -3,9 +3,9 @@ Spree::Product.class_eval do
   remove_method :brand
 
   belongs_to :brand, class_name: 'Spree::Brand'
-  belongs_to :author, -> { where(relation: :author) },
+  belongs_to :author, -> { where(role: :author) },
     class_name: 'Spree::Author'
-  belongs_to :illustrator, -> { where(relation: :illustrator) },
+  belongs_to :illustrator, -> { where(role: :illustrator) },
     class_name: 'Spree::Author'
   belongs_to :collection, class_name: 'Spree::Collection', counter_cache: true,
     optional: true
@@ -26,14 +26,14 @@ Spree::Product.class_eval do
     joins(:author)
     .where(
       author_id: author_id,
-      spree_authors: { relation: :author }
+      spree_authors: { role: :author }
     )
   }
   scope :by_illustrator, -> illustrator_id {
     joins(:author)
     .where(
       author_id: author_id,
-      spree_authors: { relation: :illustrator }
+      spree_authors: { role: :illustrator }
     )
   }
   scope :with_enabled_authors, -> {
