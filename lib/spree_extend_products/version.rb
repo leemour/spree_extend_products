@@ -10,7 +10,7 @@ module SpreeExtendProducts
   module VERSION
     MAJOR = 0
     MINOR = 2
-    TINY  = 3
+    TINY  = 4
     PRE   = nil#'alpha'.freeze
 
     STRING = [MAJOR, MINOR, TINY, PRE].compact.join('.')

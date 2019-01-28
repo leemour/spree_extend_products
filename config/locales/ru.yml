@@ -72,6 +72,7 @@ ru:
         material: Материал
         collection: Серия
         collection_id: Серия
+        bestseller: Бестселлер
       spree/variant:
         gtin: GTIN (ISBN)
         language: Язык

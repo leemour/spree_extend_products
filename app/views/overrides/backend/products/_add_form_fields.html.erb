@@ -63,3 +63,10 @@
     <%= f.select :language, Spree::Variant.languages_for_select, {}, class: 'select2' %>
   <% end %>
 </div>
+<div data-hook="admin_product_form_bestseller">
+  <%= f.field_container :bestseller, class: ['form-group'] do %>
+    <%= f.label :bestseller %>
+    <%= f.error_message_on :bestseller %>
+    <%= f.check_box :bestseller, class: 'form-control' %>
+  <% end %>
+</div>
